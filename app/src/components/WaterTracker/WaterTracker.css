@@ -1,0 +1,16 @@
+/* components/WaterTracker.css */
+.water-tracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 15px 0;
+}

@@ -1,0 +1,51 @@
+/* components/WaterDisplay.css */
+.svg-wrapper {
+  position: relative;
+  width: 200px; /* Установите размер вашего SVG */
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Важно для clip-path или translateY */
+}
+
+.svg-wrapper svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* CSS-переменные для прогресса */
+:root {
+  --water-progress: 0%; /* Начальное значение */
+  --head-opacity: 0; /* Опционально для головы */
+}
+
+/* Применение анимации для элемента воды */
+/* Если вы используете отдельный путь для воды, вы можете двигать его */
+#water-level {
+  transform: translateY(calc(100% - var(--water-progress))); /* Перемещаем воду вверх */
+  transition: transform 0.5s ease-out;
+  transform-origin: bottom; /* Анимируем от дна */
+}
+
+/* Если вы хотите анимировать видимость головы при достижении определенного уровня */
+#head-skin-fill {
+  opacity: var(--head-opacity);
+  transition: opacity 0.5s ease-out;
+}
+
+/* Стили для элементов, которые должны быть прозрачными */
+.glass-fill-part {
+  fill: transparent; /* Убедитесь, что они прозрачны, чтобы видеть воду */
+}
+
+/* Стили для обводки */
+#outline-main, #outline-body {
+  stroke: black; /* Цвет обводки */
+  stroke-width: 1;
+  fill: none; /* Важно, чтобы обводка не была заполнена */
+}
+
+/* Если у вас есть части, которые должны быть постоянно заполнены */
+.shadow-fill-part {
+  fill: #cfd8dc;
+}
